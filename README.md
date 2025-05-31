@@ -1,30 +1,28 @@
-# Proyecto de Carta de Navegación - IPC
+# 🧭 Proyecto de Carta de Navegación - IPC
 
-## Descripción del Proyecto
+<div align="center">
+  <img src="images/Menu.png" alt="Logo" width="200"/>
+  
+  [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com)
+  [![JavaFX](https://img.shields.io/badge/JavaFX-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://openjfx.io/)
+  [![SceneBuilder](https://img.shields.io/badge/SceneBuilder-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://gluonhq.com/products/scene-builder/)
+  [![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+  [![NetBeans](https://img.shields.io/badge/NetBeans-1B6AC6?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)](https://netbeans.apache.org/)
+</div>
+
+## 📝 Descripción del Proyecto
 
 Este proyecto fue desarrollado para la asignatura de Interfaces Persona Computador (IPC) y consiste en una aplicación de escritorio para la realización y gestión de problemas de carta de navegación. La aplicación está desarrollada utilizando Java con JavaFX y SceneBuilder, siguiendo los principios de diseño de interfaces de usuario.
 
-## Características Principales
+## ✨ Características Principales
 
-- Sistema de autenticación de usuarios (login y registro)
-- Interfaz intuitiva para la resolución de problemas de navegación
-- Visualización de resultados y estadísticas
-- Gestión de problemas y ejercicios
-- Menú de navegación principal
+- 🔐 Sistema de autenticación de usuarios (login y registro)
+- 📊 Interfaz intuitiva para la resolución de problemas de navegación
+- 📈 Visualización de resultados y estadísticas
+- 📚 Gestión de problemas y ejercicios
+- 🎯 Menú de navegación principal
 
-## Tecnologías Utilizadas
-
-<div align="center">
-  
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![JavaFX](https://img.shields.io/badge/JavaFX-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![SceneBuilder](https://img.shields.io/badge/SceneBuilder-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-![NetBeans](https://img.shields.io/badge/NetBeans-1B6AC6?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
-
-</div>
-
-## Estructura del Proyecto
+## 🏗️ Estructura del Proyecto
 
 ```
 ├── src/
@@ -52,48 +50,58 @@ Este proyecto fue desarrollado para la asignatura de Interfaces Persona Computad
 └── test/
 ```
 
-## Capturas de Pantalla
+## 🖼️ Capturas de Pantalla
 
-La aplicación incluye las siguientes pantallas principales:
+### 🔑 Pantalla de Login
 
-### Pantalla de Login
+<div align="center">
+  <img src="images/Login.png" alt="Login" width="600"/>
+</div>
 
-![Login](images/Login.png)
+### ✍️ Pantalla de Registro
 
-### Pantalla de Registro
+<div align="center">
+  <img src="images/Register.png" alt="Register" width="600"/>
+</div>
 
-![Register](images/Register.png)
+### 🏠 Menú Principal
 
-### Menú Principal
+<div align="center">
+  <img src="images/Menu.png" alt="Menu" width="600"/>
+</div>
 
-![Menu](images/Menu.png)
+### 📋 Lista de Problemas
 
-### Lista de Problemas
+<div align="center">
+  <img src="images/Problems.png" alt="Problems" width="600"/>
+</div>
 
-![Problems](images/Problems.png)
+### 📝 Vista de Problema Individual
 
-### Vista de Problema Individual
+<div align="center">
+  <img src="images/Problem.png" alt="Problem" width="600"/>
+</div>
 
-![Problem](images/Problem.png)
+### 📊 Resultados
 
-### Resultados
+<div align="center">
+  <img src="images/Results.png" alt="Results" width="600"/>
+</div>
 
-![Results](images/Results.png)
-
-## Requisitos del Sistema
+## 💻 Requisitos del Sistema
 
 - Java JDK 8 o superior
 - JavaFX
 - NetBeans IDE (recomendado para desarrollo)
 
-## Instalación
+## 🚀 Instalación
 
 1. Clonar el repositorio
 2. Abrir el proyecto en NetBeans
 3. Ejecutar el archivo build.xml para compilar el proyecto
 4. Ejecutar la aplicación desde NetBeans
 
-## Base de Datos
+## 💾 Base de Datos
 
 La aplicación utiliza una base de datos SQLite (data.db) para almacenar:
 
@@ -101,6 +109,12 @@ La aplicación utiliza una base de datos SQLite (data.db) para almacenar:
 - Problemas y ejercicios
 - Resultados y estadísticas
 
-## Contribución
+## 👥 Contribución
 
 Este proyecto fue desarrollado en parejas como parte de un trabajo académico para la asignatura de Interfaces Persona Computador.
+
+---
+
+<div align="center">
+  <sub>Desarrollado para la asignatura de IPC</sub>
+</div>
