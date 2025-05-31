@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #1a75ff, #0047b3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.LoginViewController">
+   <children>
+      <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" maxHeight="400.0" maxWidth="450.0" minHeight="350.0" minWidth="400.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="40.0" text="Simulador de Carta Náutica" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefWidth="450.0" spacing="14.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                     <padding>
+                        <Insets bottom="30.0" left="35.0" right="35.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="0.0">
+                           <children>
+                              <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/cuenta.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="0.0" right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <TextField fx:id="nicknameField" prefHeight="35.0" prefWidth="320.0" promptText="Nickname" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Label fx:id="statusNameLabel" prefHeight="14.0" prefWidth="278.0" textFill="#e53935">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="0.0">
+                           <children>
+                              <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/cerrar-con-llave.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="0.0" right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <PasswordField fx:id="passwordField" prefHeight="35.0" prefWidth="320.0" promptText="Contraseña" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <TextField fx:id="passwordVisibleField" managed="false" prefHeight="35.0" prefWidth="320.0" promptText="Contraseña" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;" visible="false">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="18.0" prefWidth="354.0" spacing="5.0">
+                           <children>
+                              <CheckBox fx:id="showPasswordCheckBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#togglePasswordVisibility" text="Mostrar contraseña" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="statusPassLabel" prefHeight="14.0" prefWidth="279.0" textFill="#e53935">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="statusLabel" alignment="CENTER_LEFT" prefHeight="20.0" prefWidth="320.0" textFill="#e53935">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="320.0" spacing="15.0">
+                           <children>
+                              <Button onAction="#handleGoToRegister" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;" text="Registrarse">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="loginButton" onAction="#handleLogin" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Iniciar sesión">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

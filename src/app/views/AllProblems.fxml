@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #1a75ff, #0047b3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AllProblemsController">
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+            <Label alignment="CENTER" text="Selección de Problemas" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+                <effect>
+                    <DropShadow color="#00000080" height="4.0" radius="1.5" width="4.0" />
+                </effect>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Label>
+            
+            <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <effect>
+                    <DropShadow color="#00000040" height="8.0" radius="3.5" width="8.0" />
+                </effect>
+                
+                <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+                    <Label style="-fx-font-weight: bold;" text="Filtrar por dificultad:">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <ComboBox fx:id="difficultyFilter" prefWidth="150.0" promptText="Todas">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </ComboBox>
+                    
+                    <Label style="-fx-font-weight: bold;" text="Buscar:">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="searchField" prefWidth="200.0" promptText="Palabras clave...">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <Button onAction="#handleSearch" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Buscar">
+                        <padding>
+                            <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+                        </padding>
+                    </Button>
+                </HBox>
+                
+                <TableView fx:id="problemsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="60" text="ID" />
+                        <TableColumn fx:id="titleColumn" prefWidth="300" text="Título" />
+                        <TableColumn fx:id="difficultyColumn" prefWidth="100" text="Dificultad" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="120" text="Categoría" />
+                        <TableColumn fx:id="statusColumn" prefWidth="120" text="Estado" />
+                    </columns>
+                    <placeholder>
+                        <Label style="-fx-text-fill: #757575;" text="No hay problemas disponibles" />
+                    </placeholder>
+                </TableView>
+                
+                <VBox fx:id="detailPane" style="-fx-background-color: #e3f2fd; -fx-background-radius: 8; -fx-padding: 15;">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label style="-fx-font-weight: normal; -fx-text-fill: #0d47a1;" text="Detalles del problema seleccionado">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+                    <Separator>
+                        <VBox.margin>
+                            <Insets bottom="10.0" top="5.0" />
+                        </VBox.margin>
+                    </Separator>
+                    <Label fx:id="problemTitleLabel" text="Seleccione un problema para ver detalles" wrapText="true">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="problemDescriptionLabel" wrapText="true">
+                        <VBox.margin>
+                            <Insets top="10.0" />
+                        </VBox.margin>
+                    </Label>
+                </VBox>
+                
+                <HBox alignment="CENTER" spacing="20.0">
+                    <Button onAction="#handleBack" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;" text="Volver al Menú">
+                        <padding>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                        </padding>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="startButton" disable="true" onAction="#handleStartProblem" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Comenzar Problema">
+                        <padding>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                        </padding>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

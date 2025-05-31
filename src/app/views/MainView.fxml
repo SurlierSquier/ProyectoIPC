@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #1a75ff, #0047b3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.MainViewController">
+   <children>
+      <VBox alignment="CENTER" layoutX="200.0" layoutY="100.0" spacing="25.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0">
+         <VBox alignment="CENTER" spacing="10.0">
+            <children>
+               <Label text="SIMULADOR DE CARTA NÁUTICA" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="28.0" />
+                  </font>
+                  <effect>
+                     <DropShadow color="#00000080" height="4.0" radius="1.5" width="4.0" />
+                  </effect>
+               </Label>
+               <Label text="Bienvenido al Simulador" textFill="WHITE">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+               <Region prefHeight="20.0" />
+            </children>
+         </VBox>
+         
+         <HBox alignment="CENTER" spacing="20.0">
+            <children>
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                  <padding>
+                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                  </padding>
+                  <effect>
+                     <DropShadow color="#00000040" height="8.0" radius="3.5" width="8.0" />
+                  </effect>
+                  <children>
+                     <Label style="-fx-font-weight: bold;" text="Resolver Problema">
+                        <font>
+                           <Font name="Arial" size="16.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="10.0" top="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Label text="Comienza a practicar con los problemas de navegación" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="12.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Button onAction="#goToProblem" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="COMENZAR">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+               
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                  <padding>
+                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                  </padding>
+                  <effect>
+                     <DropShadow color="#00000040" height="8.0" radius="3.5" width="8.0" />
+                  </effect>
+                  <children>
+                     <Label style="-fx-font-weight: bold;" text="Ver Resultados">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="10.0" top="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Label text="Revisa tu historial y progreso de aprendizaje" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="12.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Button onAction="#goToResults" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-background-radius: 5;" text="CONSULTAR">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+               
+               <VBox alignment="CENTER" prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                  <padding>
+                     <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                  </padding>
+                  <effect>
+                     <DropShadow color="#00000040" height="8.0" radius="3.5" width="8.0" />
+                  </effect>
+                  <children>
+                     <Label style="-fx-font-weight: bold;" text="Modificar Perfil">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="10.0" top="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Label text="Actualiza tus datos personales y configuración" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="12.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets bottom="15.0" />
+                        </VBox.margin>
+                     </Label>
+                     <Button onAction="#goToProfile" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #5c6bc0; -fx-text-fill: white; -fx-background-radius: 5;" text="MODIFICAR">
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         
+         <VBox alignment="CENTER" spacing="10.0">
+            <children>
+               <Region prefHeight="20.0" />
+               <Button fx:id="logoutButton" onAction="#logout" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;" text="Cerrar sesión">
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+                  <effect>
+                     <DropShadow color="#00000040" height="4.0" radius="1.5" width="4.0" />
+                  </effect>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets top="20.0" />
+            </VBox.margin>
+         </VBox>
+      </VBox>
+   </children>
+</AnchorPane>

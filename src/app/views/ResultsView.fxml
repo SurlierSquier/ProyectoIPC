@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #1a75ff, #0047b3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ResultsViewController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+                <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" text="Historial de Resultados">
+                    <effect>
+                        <DropShadow color="#00000080" height="3.0" radius="1.0" width="3.0" />
+                    </effect>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#backToMain" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Volver al Menú Principal">
+                    <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                    </padding>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Button>
+                <padding>
+                    <Insets bottom="20.0" />
+                </padding>
+            </HBox>
+            
+            <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+                <effect>
+                    <DropShadow color="#00000040" height="8.0" radius="3.5" width="8.0" />
+                </effect>
+                
+                <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #f5f7fa; -fx-padding: 15; -fx-background-radius: 8;">
+                    <Label style="-fx-font-weight: bold;" text="Filtrar resultados desde:">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <DatePicker fx:id="filterDatePicker" prefWidth="180.0" promptText="Seleccione fecha" style="-fx-background-radius: 5;" />
+                    <Button onAction="#handleFilter" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Aplicar Filtro">
+                        <padding>
+                            <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                        </padding>
+                    </Button>
+                    <Button onAction="#handleFilter" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;" text="Mostrar Todos">
+                        <padding>
+                            <Insets bottom="7.0" left="15.0" right="15.0" top="7.0" />
+                        </padding>
+                    </Button>
+                </HBox>
+                
+                <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+                    <Label style="-fx-font-weight: bold; -fx-text-fill: #0d47a1;" text="Listado de intentos:">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <TableView fx:id="resultsTable" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #e0e0e0;" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="dateColumn" prefWidth="286.0" text="Fecha y Hora" />
+                            <TableColumn fx:id="hitsColumn" prefWidth="218.0" text="Aciertos" />
+                            <TableColumn fx:id="faultsColumn" prefWidth="208.0" text="Errores" />
+                        </columns>
+                        <placeholder>
+                            <Label style="-fx-text-fill: #757575;" text="No hay resultados disponibles para mostrar" />
+                        </placeholder>
+                    </TableView>
+                </VBox>
+                
+                <HBox spacing="20.0" style="-fx-background-color: #e3f2fd; -fx-padding: 15; -fx-background-radius: 8;">
+                    <VBox alignment="CENTER" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #0d47a1;" text="Total Sesiones" />
+                        <Label fx:id="totalSessionsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0" />
+                    </VBox>
+                    <VBox alignment="CENTER" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #2e7d32;" text="Total Aciertos" />
+                        <Label fx:id="totalHitsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2e7d32;" text="0" />
+                    </VBox>
+                    <VBox alignment="CENTER" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #c62828;" text="Total Errores" />
+                        <Label fx:id="totalErrorsLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #c62828;" text="0" />
+                    </VBox>
+                    <VBox alignment="CENTER" style="-fx-background-color: #ffffff; -fx-background-radius: 5; -fx-padding: 10;" HBox.hgrow="ALWAYS">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #0d47a1;" text="Porcentaje Aciertos" />
+                        <Label fx:id="hitPercentageLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="0%" />
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

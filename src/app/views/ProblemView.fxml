@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="resources/problem-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ProblemViewController">
+    <top>
+        <VBox spacing="0">
+            <HBox style="-fx-background-color: #1a75ff; -fx-padding: 5 10;">
+                <Label style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;" text="Simulador de Carta Náutica">
+                    <HBox.margin>
+                        <Insets right="20.0" top="5.0" />
+                    </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="backButton" onAction="#back" styleClass="nav-button" text="Volver al Menú" />
+            </HBox>
+            
+            <ToolBar styleClass="tool-bar">
+                <HBox alignment="CENTER" spacing="5" styleClass="tool-group">
+                    <Label styleClass="group-label" text="Herramientas:" />
+                    <Button onAction="#setPointMode" styleClass="tool-button" text="Punto" />
+                    <Button onAction="#setLineMode" styleClass="tool-button" text="Línea" />
+                    <Button onAction="#setArcMode" styleClass="tool-button" text="Arco" />
+                    <Button onAction="#setTextMode" styleClass="tool-button" text="Texto" />
+                    <Button onAction="#enableColorEditMode" styleClass="tool-button" text="Editar color" />
+                    <Button onAction="#setCoordinatesMode" styleClass="tool-button" text="Coordenadas" />
+                </HBox>
+                
+                <Separator orientation="VERTICAL" />
+                
+                <HBox alignment="CENTER" spacing="5" styleClass="tool-group">
+                    <Label styleClass="group-label" text="Estilo:" />
+                    <Label text="Color:" />
+                    <ColorPicker fx:id="colorPicker" styleClass="color-picker" />
+                    <Label text="Grosor:" />
+                    <ComboBox fx:id="strokeSizeCombo" prefWidth="70" styleClass="combo-box" />
+                </HBox>
+                
+                <Separator orientation="VERTICAL" />
+                
+                <HBox alignment="CENTER" spacing="5" styleClass="tool-group">
+                    <Label styleClass="group-label" text="Vista:" />
+                    <Button onAction="#zoomIn" styleClass="zoom-button" text="Zoom +" />
+                    <Button onAction="#zoomOut" styleClass="zoom-button" text="Zoom -" />
+                </HBox>
+                
+                <Separator orientation="VERTICAL" />
+                
+                <HBox alignment="CENTER" spacing="5" styleClass="tool-group">
+                    <Label styleClass="group-label" text="Acciones:" />
+                    <Button onAction="#enableDeleteMode" styleClass="action-button" text="Borrar marca" />
+                    <Button onAction="#clearCanvas" styleClass="action-button" text="Limpiar" />
+                    <Button onAction="#toggleProblemPanel" styleClass="problem-button" text="🧭 Ver problema" />
+                    <Separator orientation="VERTICAL" />
+                    <Button onAction="#showAllProblems" styleClass="problem-button" text="Todos los problemas" />
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    
+    <center>
+        <StackPane styleClass="chart-container">
+            <ScrollPane fx:id="scrollPane" pannable="true" prefViewportHeight="700" prefViewportWidth="1000" styleClass="chart-scroll-pane">
+                <Group fx:id="zoomGroup">
+                    <Pane fx:id="pane" styleClass="chart-pane">
+                        <ImageView fx:id="chartImage" styleClass="chart-image" />
+                        <Canvas fx:id="drawingCanvas" />
+                        <ImageView fx:id="protractorImageView" pickOnBounds="false" styleClass="tool-image" />
+                        <ImageView fx:id="rulerImageView" pickOnBounds="false" styleClass="tool-image" />
+                    </Pane>
+                </Group>
+            </ScrollPane>
+        </StackPane>
+    </center>
+    
+    <bottom>
+        <TitledPane fx:id="problemPane" expanded="true" styleClass="problem-pane" text="Problema de Navegación">
+            <content>
+                <VBox fx:id="problemBox" alignment="CENTER_LEFT" spacing="15" styleClass="problem-box">
+                    <Label styleClass="section-label" text="Descripción del Problema:" />
+                    <Label fx:id="problemStatement" styleClass="problem-statement" wrapText="true" />
+                    
+                    <Label styleClass="section-label" text="Seleccione una respuesta:" />
+                    <VBox spacing="8" styleClass="answer-container">
+                        <RadioButton fx:id="answer1" styleClass="answer-option" />
+                        <RadioButton fx:id="answer2" styleClass="answer-option" />
+                        <RadioButton fx:id="answer3" styleClass="answer-option" />
+                        <RadioButton fx:id="answer4" styleClass="answer-option" />
+                    </VBox>
+                    
+                    <HBox alignment="CENTER" spacing="15" styleClass="action-buttons">
+                        <Button onAction="#checkAnswer" styleClass="check-button" text="Verificar Respuesta" />
+                        <Button onAction="#handleNextProblem" styleClass="next-button" text="Siguiente Problema" />
+                    </HBox>
+                </VBox>
+            </content>
+        </TitledPane>
+    </bottom>
+</BorderPane>
