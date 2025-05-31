@@ -99,8 +99,4 @@ La aplicación utiliza una base de datos SQLite (data.db) para almacenar:
 
 ## Contribución
 
-Este proyecto fue desarrollado como parte de un trabajo académico para la asignatura de Interfaces Persona Computador.
-
-## Licencia
-
-Este proyecto es parte de un trabajo académico y su uso está restringido a fines educativos.
+Este proyecto fue desarrollado en parejas como parte de un trabajo académico para la asignatura de Interfaces Persona Computador.
