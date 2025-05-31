@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #1a75ff, #0047b3);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.RegisterViewController">
+   <children>
+      <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" maxHeight="550.0" maxWidth="500.0" minHeight="500.0" minWidth="450.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="40.0" text="Registro de Usuario" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  
+                  <VBox alignment="TOP_CENTER" spacing="16.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                     <padding>
+                        <Insets bottom="25.0" left="35.0" right="35.0" top="25.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label style="-fx-text-fill: #555555; -fx-font-weight: bold;" text="Nickname">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nicknameField" prefHeight="35.0" prefWidth="320.0" promptText="Ingrese su nickname" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label style="-fx-text-fill: #555555; -fx-font-weight: bold;" text="Correo Electrónico">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="emailField" prefHeight="35.0" prefWidth="320.0" promptText="Ingrese su correo electrónico" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label style="-fx-text-fill: #555555; -fx-font-weight: bold;" text="Contraseña">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="passwordField" prefHeight="35.0" prefWidth="320.0" promptText="Ingrese su contraseña" style="-fx-background-color: #f5f7fa; -fx-background-radius: 5; -fx-padding: 8;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </VBox>
+                        <!-- Mejora de espacios en el HBox del calendario y avatar -->
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="28.0">
+                           <padding>
+                              <Insets bottom="8.0" top="12.0" />
+                           </padding>
+                           <children>
+                              
+                              <VBox prefHeight="95.0" prefWidth="206.0" spacing="16.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #555555; -fx-font-weight: bold;" text="Fecha de Nacimiento">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="birthdatePicker" prefHeight="38.0" prefWidth="193.0" promptText="Seleccione fecha" style="-fx-background-color: #f5f7fa;" />
+                                 </children>
+                              </VBox>
+                              
+                              <VBox alignment="CENTER" prefHeight="95.0" prefWidth="214.0" spacing="8.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: #555555; -fx-font-weight: bold;" text="Avatar">
+                                       <font>
+                                          <Font size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" spacing="18.0">
+                                       <children>
+                                          <ImageView fx:id="avatarPreview" fitHeight="72.0" fitWidth="72.0" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 0); -fx-background-radius: 5;">
+                                             <image>
+                                                <Image url="@../../resources/capitan.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button minHeight="26.0" minWidth="90.0" onAction="#handleSelectAvatar" prefHeight="44.0" prefWidth="107.0" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;" text="Seleccionar avatar" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <Label fx:id="statusLabel" alignment="CENTER" prefHeight="20.0" prefWidth="320.0" textFill="#e53935">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        
+                        <HBox alignment="CENTER" prefWidth="420.0" spacing="15.0">
+                           <children>
+                              <Button onAction="#handleGoToLogin" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #78909c; -fx-text-fill: white; -fx-background-radius: 5;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <HBox alignment="CENTER" spacing="5.0">
+                                       <children>
+                                          <Label text="← Volver" textFill="WHITE">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="registerButton" onAction="#handleRegister" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 5;" text="Registrar">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
