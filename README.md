@@ -14,11 +14,15 @@ Este proyecto fue desarrollado para la asignatura de Interfaces Persona Computad
 
 ## Tecnologías Utilizadas
 
-- Java
-- JavaFX
-- SceneBuilder
-- SQLite (para la base de datos)
-- NetBeans IDE
+<div align="center">
+  
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![SceneBuilder](https://img.shields.io/badge/SceneBuilder-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![NetBeans](https://img.shields.io/badge/NetBeans-1B6AC6?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white)
+
+</div>
 
 ## Estructura del Proyecto
 
